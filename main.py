@@ -1,6 +1,9 @@
-from stats import get_num_words, get_num_chars
+from stats import get_num_words, word_count
 
 def main():
+    print("============ BOOKBOT ============\nAnalyzing book found at books/frankenstein.txt...\n----------- Word Count ----------")
     get_num_words()
-    get_num_chars()
+    print("--------- Character Count -------")
+    word_count()
+    
 main()
