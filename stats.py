@@ -4,32 +4,27 @@ def get_book_text(filepath):
         x = f.read()
     return x
 
-def get_num_words():
-    text = get_book_text("books/frankenstein.txt")
+def get_num_words(text):
+    
     length = text.split()
-    print(f"Found {len(length)} total words")
+    return print(f"Found {len(length)} total words")
 
-def get_num_chars():
+def get_num_chars(text):
 
     count = {}
-    text = get_book_text("books/frankenstein.txt").lower()
 
     for letters in text:
+        lowered = letters.lower()
+        if lowered in count:
+            count[lowered] = count[lowered] + 1
+        else:
+            count[lowered] = 1
 
-        try:
-            if letters in count:
-                count[letters] = count[letters] + 1
-            else:
-                count[letters] = 1
-
-        except Exception as e:
-            pass
-    
     return count
 
 
-def word_count():
-    count = get_num_chars()
+def word_count(count):
+
     count_list = []
 
     for words in count:
