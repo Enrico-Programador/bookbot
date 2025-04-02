@@ -24,14 +24,22 @@ def get_num_chars():
 
         except Exception as e:
             pass
-
+    
     return count
 
 
 def word_count():
-    
     count = get_num_chars()
+    count_list = []
 
-    return print(count)
+    for words in count:
+        to_append = []
+        if words.isalpha() == True:
+            to_append.append(words)
+            to_append.append(count[words])
+            count_list.append(to_append)
+
+    count_list.sort(reverse=True, key=lambda x: x[1])
+    return count_list
 
             #python3 main.py

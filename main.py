@@ -4,6 +4,9 @@ def main():
     print("============ BOOKBOT ============\nAnalyzing book found at books/frankenstein.txt...\n----------- Word Count ----------")
     get_num_words()
     print("--------- Character Count -------")
-    word_count()
+    count_list = word_count()
+    for words in count_list:
+        print(f"{words[0]}: {words[1]}")
+    print("============= END ===============")
     
 main()
