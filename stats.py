@@ -36,5 +36,3 @@ def word_count(count):
 
     count_list.sort(reverse=True, key=lambda x: x[1])
     return count_list
-
-            #python3 main.py
